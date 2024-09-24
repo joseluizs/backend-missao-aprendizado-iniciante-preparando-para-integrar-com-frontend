@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const { connectToDatabase } = require('./db/database-connection')
+const cors = require('cors')
 
 //Routers
 const personagemRouter = require('./personagem/personagem.router')
@@ -17,6 +18,7 @@ async function main() {
   //Milddlewares
   //Sinalizar para Express q estou usando JSON no body
   app.use(express.json())
+  app.use(cors())
 
   //endpoint helloword 
   app.get('/', function (req, res) {
