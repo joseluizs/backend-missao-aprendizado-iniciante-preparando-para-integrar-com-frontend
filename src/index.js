@@ -1,4 +1,5 @@
 require('dotenv').config()
+require('express-async-console.error')
 const express = require('express')
 const { connectToDatabase } = require('./db/database-connection')
 const cors = require('cors')
